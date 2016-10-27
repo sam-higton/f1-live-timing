@@ -12,10 +12,11 @@ class Circuit extends Model
 
 
 
-    public function loadWikiData () {
-        $api = new \Mediawiki\Api\MediawikiApi("http://en.wikipedia.org/w/api.php");
-        $wikiService = new \Mediawiki\Api\MediawikiFactory($api);
-        $page = $wikiService->newPageGetter()->getFromTitle($this->name);
+    public function getWikiData () {
+
+        $wikiData = \App\CircuitWikiData::getData($this);
+
+
 
     }
 

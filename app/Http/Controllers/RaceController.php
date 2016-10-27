@@ -50,7 +50,7 @@ class RaceController extends Controller
     {
         $race = \App\Race::fetchRace($season,$round);
         $circuit = $race->circuit;
-        $circuit->loadWikiData();
+        $circuit->getWikiData();
 
         return view('race.show',[
             "season" => $season,

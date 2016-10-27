@@ -13,8 +13,13 @@ class CreateCircuitWikiDatasTable extends Migration
      */
     public function up()
     {
-        Schema::create('circuit_wiki_datas', function (Blueprint $table) {
+        Schema::create('circuit_wiki_data', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('circuitId');
+            $table->text('distance');
+            $table->integer('turns');
+            $table->text('lapRecord');
+            $table->text('imagePath');
             $table->timestamps();
         });
     }
